@@ -13,6 +13,6 @@
 	# Author:
 	# Patrikk
 	
-module.exports = (robot) ->
-    robot.respond /ping$/i, (msg) ->
-        msg.send "ping"
+	module.exports = (robot) ->
+	robot.respond /say (.+) (.+)/i, (msg) ->
+	robot.messageRoom msg.match[1], msg.match[2]
