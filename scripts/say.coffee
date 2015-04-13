@@ -15,6 +15,4 @@
 	
 	module.exports = (robot) ->
 	robot.respond /say (.*) (.*)/i, (msg) ->
-	room = msg.match[1].trim()
-	message = msg.match[2].trim()
-	robot.messageRoom room, message
+	robot.messageRoom msg.match[1], msg.match[2]
