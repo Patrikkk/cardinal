@@ -40,8 +40,7 @@ module.exports = (robot) ->
       tagname = msg.match[1].trim()
       multipleTags = tagname.split(',')
       getRandomImageFromTags(robot, multipleTags).then (payload) ->
-        proxy_url = create_hmac(payload.url)
-        msg.send("Image id: #{payload.id} - #{proxy_url}")
+        msg.send("Image id: #{payload.id} - #{payload.url}")
       .fail (e) ->
         msg.send("Failed to get random image: #{e}")
 
